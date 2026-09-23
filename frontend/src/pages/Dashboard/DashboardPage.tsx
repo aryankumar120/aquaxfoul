@@ -103,11 +103,6 @@ export const DashboardPage: React.FC = () => {
 
         {/* Fuel Consumption Trend Line */}
         <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="text-base font-bold text-slate-900 tracking-tight">
-              Fuel Consumption Trend
-            </h2>
-          </div>
           <FuelConsumptionTrendChart data={data.fuelConsumptionTrend} />
         </div>
       </div>

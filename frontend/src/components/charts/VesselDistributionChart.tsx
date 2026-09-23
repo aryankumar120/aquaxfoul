@@ -20,7 +20,7 @@ export const VesselDistributionChart: React.FC<VesselDistributionChartProps> = (
   const chartOption = {
     tooltip: {
       trigger: 'item',
-      formatter: '{b}: <b>{c}</b> ({d}%)',
+      formatter: '{b}: <b>{c} vessels</b> ({d}%)',
       backgroundColor: '#0f172a',
       borderColor: '#334155',
       textStyle: { color: '#ffffff', fontSize: 12 },
@@ -29,7 +29,7 @@ export const VesselDistributionChart: React.FC<VesselDistributionChartProps> = (
       {
         name: 'Vessel Distribution',
         type: 'pie',
-        radius: ['58%', '82%'],
+        radius: ['52%', '78%'],
         center: ['50%', '50%'],
         avoidLabelOverlap: false,
         label: {
@@ -38,10 +38,10 @@ export const VesselDistributionChart: React.FC<VesselDistributionChartProps> = (
           formatter: () => `{val|${totalVessels}}\n{label|Vessels}`,
           rich: {
             val: {
-              fontSize: 22,
+              fontSize: 24,
               fontWeight: 700,
               color: '#0f172a',
-              lineHeight: 26,
+              lineHeight: 28,
             },
             label: {
               fontSize: 12,
@@ -54,7 +54,7 @@ export const VesselDistributionChart: React.FC<VesselDistributionChartProps> = (
         emphasis: {
           label: {
             show: true,
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: 'bold',
           },
           itemStyle: {
@@ -76,33 +76,12 @@ export const VesselDistributionChart: React.FC<VesselDistributionChartProps> = (
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between gap-4 h-full">
-      <div className="w-48 h-48 sm:w-52 sm:h-52 relative shrink-0">
-        <ReactECharts
-          option={chartOption}
-          style={{ height: '100%', width: '100%' }}
-          opts={{ renderer: 'svg' }}
-        />
-      </div>
-
-      {/* Legend Column matching Reference Image */}
-      <div className="grid grid-cols-1 gap-2.5 w-full text-xs pr-2">
-        {data.map((item) => (
-          <div key={item.type} className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <span
-                className="w-2.5 h-2.5 rounded-full shrink-0"
-                style={{ backgroundColor: item.color }}
-              />
-              <span className="text-slate-600 font-medium">{item.type}</span>
-            </div>
-            <div className="text-slate-900 font-semibold">
-              {item.count}{' '}
-              <span className="text-slate-400 font-normal">({item.percentage}%)</span>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="w-full h-56 flex items-center justify-center">
+      <ReactECharts
+        option={chartOption}
+        style={{ height: '100%', width: '100%' }}
+        opts={{ renderer: 'svg' }}
+      />
     </div>
   );
 };

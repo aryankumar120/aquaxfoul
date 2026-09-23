@@ -31,8 +31,26 @@ export const Sidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="w-64 bg-[#0a1319] text-slate-300 flex flex-col justify-between shrink-0 h-screen sticky top-0 border-r border-[#14232e] select-none z-30">
-      <div>
+    <aside className="w-64 bg-[#0a1319] text-slate-300 flex flex-col justify-between shrink-0 h-screen sticky top-0 border-r border-[#14232e] select-none z-30 relative overflow-hidden">
+      {/* Full Sidebar Looping Video Background */}
+      {!videoError && (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          onError={() => setVideoError(true)}
+          className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-screen pointer-events-none z-0"
+        >
+          <source src="/videos/ocean.mp4" type="video/mp4" />
+        </video>
+      )}
+
+      {/* Dark Oceanic Overlay for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1319]/90 via-[#0a1319]/75 to-[#071017]/95 pointer-events-none z-0" />
+
+      {/* Top Header & Navigation Links */}
+      <div className="relative z-10 flex-1 flex flex-col">
         {/* Brand Header */}
         <div className="p-6 pb-5 flex items-center space-x-3 border-b border-[#14232e]/60">
           <div className="w-9 h-9 rounded-lg bg-[#0e272a] border border-[#00c9a7]/30 flex items-center justify-center shrink-0">
@@ -62,7 +80,7 @@ export const Sidebar: React.FC = () => {
                 `flex items-center space-x-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
                   isActive
                     ? 'bg-[#0e3838] text-white shadow-sm border border-[#00c9a7]/20 font-semibold'
-                    : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]'
+                    : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]/80'
                 }`
               }
             >
@@ -85,7 +103,7 @@ export const Sidebar: React.FC = () => {
                 `flex items-center space-x-3 px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${
                   isActive
                     ? 'bg-[#0e3838] text-white'
-                    : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]'
+                    : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]/80'
                 }`
               }
             >
@@ -96,25 +114,9 @@ export const Sidebar: React.FC = () => {
         </div>
       </div>
 
-      {/* Ocean Banner / Video Section at Bottom of Sidebar */}
-      <div className="p-3 m-3 mt-auto rounded-xl relative overflow-hidden border border-[#1a3344] bg-[#0c1a24] shadow-inner group">
-        {!videoError && (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            onError={() => setVideoError(true)}
-            className="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-screen pointer-events-none"
-          >
-            <source src="/videos/ocean.mp4" type="video/mp4" />
-          </video>
-        )}
-        
-        {/* Ocean graphic texture fallback */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#081219] via-transparent to-[#081219]/60 pointer-events-none" />
-
-        <div className="relative z-10 p-2">
+      {/* Ocean Banner Card at Bottom */}
+      <div className="relative z-10 p-3 m-3 mt-auto rounded-xl overflow-hidden border border-[#1a3344] bg-[#0c1a24]/85 backdrop-blur-sm shadow-inner group">
+        <div className="p-2">
           <div className="h-1 w-6 bg-[#00c9a7] rounded mb-2" />
           <p className="text-xs font-semibold text-slate-200 leading-snug">
             Sustainable Shipping

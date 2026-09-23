@@ -28,13 +28,13 @@ export const RecentVesselsTable: React.FC<RecentVesselsTableProps> = ({ vessels 
         <table className="w-full text-left border-collapse text-xs">
           <thead>
             <tr className="border-b border-slate-100 text-slate-400 font-semibold uppercase tracking-wider">
-              <th className="pb-3 pr-4">IMO</th>
-              <th className="pb-3 px-4">Vessel Name</th>
-              <th className="pb-3 px-4">Type</th>
-              <th className="pb-3 px-4">DWT</th>
-              <th className="pb-3 px-4">Current Status</th>
-              <th className="pb-3 px-4">Fouling Risk</th>
-              <th className="pb-3 pl-4">Last Inspection</th>
+              <th className="pb-3 pr-4 whitespace-nowrap">IMO</th>
+              <th className="pb-3 px-4 whitespace-nowrap">Vessel Name</th>
+              <th className="pb-3 px-4 whitespace-nowrap">Type</th>
+              <th className="pb-3 px-4 whitespace-nowrap">DWT</th>
+              <th className="pb-3 px-4 whitespace-nowrap">Current Status</th>
+              <th className="pb-3 px-4 whitespace-nowrap">Fouling Risk</th>
+              <th className="pb-3 pl-4 whitespace-nowrap">Last Inspection</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 text-slate-700 font-medium">
@@ -44,21 +44,21 @@ export const RecentVesselsTable: React.FC<RecentVesselsTableProps> = ({ vessels 
                 onClick={() => navigate(`/vessels/${v.id}`)}
                 className="hover:bg-slate-50/80 cursor-pointer transition-colors group"
               >
-                <td className="py-3.5 pr-4 text-slate-500 font-mono">{v.imo}</td>
-                <td className="py-3.5 px-4 font-semibold text-slate-900 group-hover:text-aqua-600 transition-colors">
+                <td className="py-3.5 pr-4 text-slate-500 font-mono whitespace-nowrap">{v.imo}</td>
+                <td className="py-3.5 px-4 font-semibold text-slate-900 group-hover:text-aqua-600 transition-colors whitespace-nowrap">
                   {v.name}
                 </td>
-                <td className="py-3.5 px-4 text-slate-600">{v.type}</td>
-                <td className="py-3.5 px-4 font-mono text-slate-600">
+                <td className="py-3.5 px-4 text-slate-600 whitespace-nowrap">{v.type}</td>
+                <td className="py-3.5 px-4 font-mono text-slate-600 whitespace-nowrap">
                   {v.dwt.toLocaleString()}
                 </td>
-                <td className="py-3.5 px-4">
+                <td className="py-3.5 px-4 whitespace-nowrap">
                   <StatusBadge type="status" value={v.status} />
                 </td>
-                <td className="py-3.5 px-4">
+                <td className="py-3.5 px-4 whitespace-nowrap">
                   <StatusBadge type="risk" value={v.foulingRisk} />
                 </td>
-                <td className="py-3.5 pl-4 text-slate-500">{v.lastInspectionDate}</td>
+                <td className="py-3.5 pl-4 text-slate-500 whitespace-nowrap">{v.lastInspectionDate}</td>
               </tr>
             ))}
           </tbody>
