@@ -64,6 +64,68 @@
   }
 }
 
+/* Maritime sailing and ocean wave animations */
+@keyframes marineSail {
+  0% {
+    transform: translateX(-480px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+  }
+}
+
+@keyframes marineBob {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(-0.4deg);
+  }
+  75% {
+    transform: translateY(2px) rotate(0.3deg);
+  }
+}
+
+@keyframes marineWake {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scaleX(0.96) translateY(0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scaleX(1.04) translateY(-1px);
+  }
+}
+
+@keyframes buoyBob {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(3deg);
+  }
+}
+
+.animate-marine-sail {
+  animation: marineSail 65s linear infinite;
+}
+
+.animate-marine-sail-fast {
+  animation: marineSail 32s linear infinite;
+}
+
+.animate-marine-bob {
+  animation: marineBob 5s ease-in-out infinite;
+}
+
+.animate-marine-wake {
+  animation: marineWake 3s ease-in-out infinite;
+}
+
+.animate-buoy-bob {
+  animation: buoyBob 4s ease-in-out infinite;
+}
+
 /* Custom scrollbars for clean dashboards */
 ::-webkit-scrollbar {
   width: 6px;
