@@ -1,0 +1,129 @@
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import {
+  LayoutDashboard,
+  Ship,
+  Layers,
+  Waves,
+  Droplets,
+  LineChart,
+  FileText,
+  Settings,
+  HelpCircle,
+} from 'lucide-react';
+
+export const Sidebar: React.FC = () => {
+  const [videoError, setVideoError] = useState(false);
+
+  const mainNavItems = [
+    { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
+    { label: 'Fleet', path: '/fleet', icon: Ship },
+    { label: 'Vessels', path: '/fleet', icon: Layers },
+    { label: 'Fouling', path: '/fouling', icon: Waves },
+    { label: 'Cleaning', path: '/cleaning', icon: Droplets },
+    { label: 'Projections', path: '/projections', icon: LineChart },
+    { label: 'Reports', path: '/reports', icon: FileText },
+  ];
+
+  const secondaryNavItems = [
+    { label: 'Settings', path: '/settings', icon: Settings },
+    { label: 'Help', path: '/help', icon: HelpCircle },
+  ];
+
+  return (
+    <aside className="w-64 bg-[#0a1319] text-slate-300 flex flex-col justify-between shrink-0 h-screen sticky top-0 border-r border-[#14232e] select-none z-30">
+      <div>
+        {/* Brand Header */}
+        <div className="p-6 pb-5 flex items-center space-x-3 border-b border-[#14232e]/60">
+          <div className="w-9 h-9 rounded-lg bg-[#0e272a] border border-[#00c9a7]/30 flex items-center justify-center shrink-0">
+            <svg className="w-6 h-6 text-[#00c9a7]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 9C6.5 6 10 12 14 9C17.5 6 21 12 21 9" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M3 15C6.5 12 10 18 14 15C17.5 12 21 18 21 15" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <div>
+            <div className="text-white font-bold text-lg tracking-tight leading-none flex items-center gap-1">
+              Aqua-X-Foul
+            </div>
+            <div className="text-[10px] text-slate-400 font-medium tracking-wide mt-1">
+              Cleaner Vessels. <span className="text-[#00c9a7]">Greener Oceans.</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Primary Navigation */}
+        <nav className="px-3 py-4 space-y-1">
+          {mainNavItems.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.path}
+              end={item.path === '/dashboard'}
+              className={({ isActive }) =>
+                `flex items-center space-x-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
+                  isActive
+                    ? 'bg-[#0e3838] text-white shadow-sm border border-[#00c9a7]/20 font-semibold'
+                    : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]'
+                }`
+              }
+            >
+              <item.icon className="w-4 h-4 shrink-0 text-slate-300" />
+              <span>{item.label}</span>
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* Divider & Secondary Nav */}
+        <div className="px-4 py-2">
+          <div className="h-px bg-[#14232e]" />
+        </div>
+        <div className="px-3 py-1 space-y-1">
+          {secondaryNavItems.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.path}
+              className={({ isActive }) =>
+                `flex items-center space-x-3 px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${
+                  isActive
+                    ? 'bg-[#0e3838] text-white'
+                    : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]'
+                }`
+              }
+            >
+              <item.icon className="w-4 h-4 shrink-0 text-slate-400" />
+              <span>{item.label}</span>
+            </NavLink>
+          ))}
+        </div>
+      </div>
+
+      {/* Ocean Banner / Video Section at Bottom of Sidebar */}
+      <div className="p-3 m-3 mt-auto rounded-xl relative overflow-hidden border border-[#1a3344] bg-[#0c1a24] shadow-inner group">
+        {!videoError && (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            onError={() => setVideoError(true)}
+            className="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-screen pointer-events-none"
+          >
+            <source src="/videos/ocean.mp4" type="video/mp4" />
+          </video>
+        )}
+        
+        {/* Ocean graphic texture fallback */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#081219] via-transparent to-[#081219]/60 pointer-events-none" />
+
+        <div className="relative z-10 p-2">
+          <div className="h-1 w-6 bg-[#00c9a7] rounded mb-2" />
+          <p className="text-xs font-semibold text-slate-200 leading-snug">
+            Sustainable Shipping
+          </p>
+          <p className="text-[11px] text-slate-400 leading-tight mt-0.5">
+            for a Cleaner Tomorrow
+          </p>
+        </div>
+      </div>
+    </aside>
+  );
+};
