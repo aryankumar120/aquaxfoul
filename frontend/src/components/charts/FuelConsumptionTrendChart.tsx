@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import { ChevronDown } from 'lucide-react';
 
@@ -14,8 +14,23 @@ interface FuelConsumptionTrendChartProps {
 export const FuelConsumptionTrendChart: React.FC<FuelConsumptionTrendChartProps> = ({ data }) => {
   const [selectedFilter, setSelectedFilter] = useState('All Vessels');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const filters = ['All Vessels', 'Container Ships', 'Bulk Carriers', 'LNG Carriers'];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
 
   const chartOption = {
     tooltip: {
@@ -105,7 +120,7 @@ export const FuelConsumptionTrendChart: React.FC<FuelConsumptionTrendChartProps>
         </h2>
 
         {/* Dropdown filter */}
-        <div className="relative">
+        <div className="relative" ref={dropdownRef}>
           <button
             type="button"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
