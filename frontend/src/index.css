@@ -18,6 +18,7 @@
   .card-hover {
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
   }
+
   .card-hover:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 6px 12px -4px rgba(15, 23, 42, 0.04);
@@ -27,6 +28,7 @@
   .card-subtle {
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
   }
+
   .card-subtle:hover {
     transform: translateY(-1.5px);
     box-shadow: 0 8px 18px -4px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.03);
@@ -37,11 +39,13 @@
     @apply cursor-pointer;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
   }
+
   .card-interactive:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 22px -4px rgba(15, 23, 42, 0.07), 0 4px 8px -2px rgba(15, 23, 42, 0.03);
     border-color: rgba(0, 201, 167, 0.5);
   }
+
   .card-interactive:active {
     transform: translateY(0) scale(0.99);
   }
@@ -49,9 +53,11 @@
   .btn-press {
     transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, box-shadow 0.15s ease;
   }
+
   .btn-press:hover {
     transform: translateY(-1px);
   }
+
   .btn-press:active {
     transform: translateY(0) scale(0.97);
   }
@@ -59,71 +65,10 @@
   .row-hover {
     transition: background-color 0.15s ease, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   }
+
   .row-hover:hover {
     transform: translateX(2px);
   }
-}
-
-/* Maritime sailing and ocean wave animations */
-@keyframes marineSail {
-  0% {
-    transform: translateX(-480px);
-  }
-  100% {
-    transform: translateX(calc(100vw + 100px));
-  }
-}
-
-@keyframes marineBob {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-3px) rotate(-0.4deg);
-  }
-  75% {
-    transform: translateY(2px) rotate(0.3deg);
-  }
-}
-
-@keyframes marineWake {
-  0%, 100% {
-    opacity: 0.25;
-    transform: scaleX(0.96) translateY(0);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scaleX(1.04) translateY(-1px);
-  }
-}
-
-@keyframes buoyBob {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-5px) rotate(3deg);
-  }
-}
-
-.animate-marine-sail {
-  animation: marineSail 65s linear infinite;
-}
-
-.animate-marine-sail-fast {
-  animation: marineSail 32s linear infinite;
-}
-
-.animate-marine-bob {
-  animation: marineBob 5s ease-in-out infinite;
-}
-
-.animate-marine-wake {
-  animation: marineWake 3s ease-in-out infinite;
-}
-
-.animate-buoy-bob {
-  animation: buoyBob 4s ease-in-out infinite;
 }
 
 /* Custom scrollbars for clean dashboards */
@@ -146,7 +91,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
+
+  *,
+  ::before,
+  ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

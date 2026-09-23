@@ -1,13 +1,10 @@
 import React from 'react';
-import { Calendar } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useDateRange } from '../../context/DateRangeContext';
 
 export const WelcomeBanner: React.FC = () => {
   const { user } = useAuth();
   const { period, setPeriod } = useDateRange();
-
-  const displayDate = 'Fri, 19 Sep 2026';
 
   const pillOptions = [
     { label: '30D', value: 'Last 30 days', title: 'Last 30 days' },
@@ -44,11 +41,6 @@ export const WelcomeBanner: React.FC = () => {
           </div>
         </div>
 
-        {/* Date string */}
-        <div className="text-xs font-medium text-slate-500 hidden sm:flex items-center space-x-1.5">
-          <Calendar className="w-3.5 h-3.5 text-slate-400" />
-          <span>{displayDate}</span>
-        </div>
 
         {/* Inline Segmented Period Switcher (Zero overlap on cards below) */}
         <div className="inline-flex items-center p-1 bg-slate-100/90 rounded-xl border border-slate-200/80 shadow-2xs">

@@ -2,19 +2,15 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
-import { MarineBackground } from './MarineBackground';
 
 export const AppLayout: React.FC = () => {
   return (
-    <div className="relative flex min-h-screen bg-slate-50/70 font-sans text-slate-800 overflow-x-hidden">
-      {/* Full Screen Animated Interactive Marine Vessel & Containers Background */}
-      <MarineBackground defaultOpacity={0.35} />
-
+    <div className="flex min-h-screen bg-slate-50/70 font-sans text-slate-800">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className="relative z-10 flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0">
         <Header />
         <main className="flex-1 p-6 md:p-8 max-w-7xl w-full mx-auto">
           <Outlet />
