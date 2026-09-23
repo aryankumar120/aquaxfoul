@@ -25,7 +25,7 @@ export const CleaningPage: React.FC = () => {
 
       {/* Overview Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default">
           <div className="flex items-center space-x-2 text-xs font-semibold text-sky-600">
             <Clock className="w-4 h-4" />
             <span>Cleanings Due (30 Days)</span>
@@ -34,7 +34,7 @@ export const CleaningPage: React.FC = () => {
           <p className="text-[11px] text-slate-400 mt-1">Vessels at high fuel penalty threshold</p>
         </div>
 
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default">
           <div className="flex items-center space-x-2 text-xs font-semibold text-emerald-600">
             <CheckCircle2 className="w-4 h-4" />
             <span>Completed This Year</span>
@@ -43,7 +43,7 @@ export const CleaningPage: React.FC = () => {
           <p className="text-[11px] text-slate-400 mt-1">Across 18 global deepwater ports</p>
         </div>
 
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default">
           <div className="flex items-center space-x-2 text-xs font-semibold text-slate-700">
             <Leaf className="w-4 h-4 text-emerald-500" />
             <span>Cumulative CO₂ Abated</span>
@@ -52,7 +52,7 @@ export const CleaningPage: React.FC = () => {
           <p className="text-[11px] text-emerald-600 font-semibold mt-1">~3,800 t fuel saved</p>
         </div>
 
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default">
           <div className="flex items-center space-x-2 text-xs font-semibold text-slate-700">
             <DollarSign className="w-4 h-4 text-amber-500" />
             <span>Average Service Cost</span>
@@ -63,7 +63,7 @@ export const CleaningPage: React.FC = () => {
       </div>
 
       {/* Main List Table */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+      <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-6 space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-bold text-slate-900">
             Comprehensive Cleaning Records
@@ -73,9 +73,9 @@ export const CleaningPage: React.FC = () => {
               <button
                 key={s}
                 onClick={() => setFilterType(s)}
-                className={`px-3 py-1 rounded-md font-medium transition-colors ${
+                className={`px-3 py-1 rounded-md font-medium transition-all btn-press ${
                   filterType === s
-                    ? 'bg-slate-900 text-white'
+                    ? 'bg-slate-900 text-white shadow-xs'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
@@ -87,7 +87,7 @@ export const CleaningPage: React.FC = () => {
 
         <div className="space-y-3">
           {filteredCleanings.map((c) => (
-            <div key={c.id} className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 text-xs">
+            <div key={c.id} className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 text-xs card-subtle hover:bg-white hover:border-slate-300">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-200/80">
                 <div>
                   <div className="flex items-center space-x-2">

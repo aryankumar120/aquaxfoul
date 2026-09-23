@@ -26,7 +26,7 @@ export const FoulingTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
   return (
     <div className="space-y-6">
       {/* Current Fouling Assessment Status */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+      <div className="bg-white rounded-xl border border-slate-200/90 p-6 shadow-card card-subtle">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
           <div>
             <h2 className="text-base font-bold text-slate-900 flex items-center space-x-2">
@@ -44,7 +44,7 @@ export const FoulingTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
-          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 card-subtle hover:bg-white">
             <span className="text-xs text-slate-400 font-medium">Hull Bio-Coverage</span>
             <div className="text-2xl font-bold text-slate-900 mt-1 font-mono">
               {assessments[0]?.foulingCoveragePct || vessel.foulingRating}%
@@ -52,7 +52,7 @@ export const FoulingTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             <p className="text-[11px] text-slate-400 mt-1">Primarily low-drag microbial slime</p>
           </div>
 
-          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 card-subtle hover:bg-white">
             <span className="text-xs text-slate-400 font-medium">Hydrodynamic Roughness (k_s)</span>
             <div className="text-2xl font-bold text-slate-900 mt-1 font-mono">
               {assessments[0]?.roughnessMicrons || 85} <span className="text-xs font-normal text-slate-400">μm</span>
@@ -60,7 +60,7 @@ export const FoulingTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             <p className="text-[11px] text-emerald-600 mt-1">Normal coating threshold &lt; 150 μm</p>
           </div>
 
-          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 card-subtle hover:bg-white">
             <span className="text-xs text-slate-400 font-medium">Induced Speed Loss</span>
             <div className="text-2xl font-bold text-slate-900 mt-1 font-mono">
               -{assessments[0]?.speedLossPct || 0.3}%
@@ -68,7 +68,7 @@ export const FoulingTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             <p className="text-[11px] text-slate-400 mt-1">ISO 19030 hydrodynamic deviation</p>
           </div>
 
-          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 card-subtle hover:bg-white">
             <span className="text-xs text-slate-400 font-medium">Excess CO₂ Penalty</span>
             <div className="text-2xl font-bold text-slate-900 mt-1 font-mono">
               +{assessments[0]?.estimatedCo2PenaltyTons || 12.4} <span className="text-xs font-normal text-slate-400">t</span>
@@ -79,7 +79,7 @@ export const FoulingTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
       </div>
 
       {/* Historical Fouling Assessments Table */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+      <div className="bg-white rounded-xl border border-slate-200/90 p-6 shadow-card card-subtle">
         <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center space-x-2">
           <Microscope className="w-4 h-4 text-slate-600" />
           <span>Historical Biofouling Assessments</span>
@@ -100,7 +100,7 @@ export const FoulingTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             </thead>
             <tbody className="divide-y divide-slate-100 text-slate-700">
               {assessments.map((a) => (
-                <tr key={a.id} className="hover:bg-slate-50/80">
+                <tr key={a.id} className="hover:bg-slate-50/90 transition-all duration-150">
                   <td className="py-3 px-4 font-mono text-slate-600">{a.date}</td>
                   <td className="py-3 px-4">
                     <StatusBadge type="risk" value={a.riskLevel} />
@@ -118,7 +118,7 @@ export const FoulingTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
       </div>
 
       {/* Underwater Inspection Records */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+      <div className="bg-white rounded-xl border border-slate-200/90 p-6 shadow-card card-subtle">
         <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center space-x-2">
           <Camera className="w-4 h-4 text-slate-600" />
           <span>Underwater Drone / Diver Inspection Log</span>
@@ -126,7 +126,7 @@ export const FoulingTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
 
         <div className="space-y-3">
           {inspections.map((insp) => (
-            <div key={insp.id} className="border border-slate-200 rounded-xl p-4 bg-slate-50/40 text-xs">
+            <div key={insp.id} className="border border-slate-200 rounded-xl p-4 bg-slate-50/40 text-xs card-subtle hover:bg-white hover:border-slate-300">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-100">
                 <div className="flex items-center space-x-3">
                   <span className="font-bold text-slate-900">{insp.type}</span>

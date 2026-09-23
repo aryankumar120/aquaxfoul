@@ -35,7 +35,7 @@ export const SettingsPage: React.FC = () => {
       )}
 
       {/* User Info */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+      <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-6 space-y-4">
         <h2 className="text-sm font-bold text-slate-900 flex items-center space-x-2">
           <Shield className="w-4 h-4 text-aqua-600" />
           <span>Authenticated Account</span>
@@ -63,7 +63,7 @@ export const SettingsPage: React.FC = () => {
       </div>
 
       {/* FastAPI Backend Endpoint */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+      <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-6 space-y-4">
         <h2 className="text-sm font-bold text-slate-900 flex items-center space-x-2">
           <Server className="w-4 h-4 text-aqua-600" />
           <span>FastAPI Backend Connection</span>
@@ -81,14 +81,14 @@ export const SettingsPage: React.FC = () => {
               type="text"
               value={apiBaseUrl}
               onChange={(e) => setApiBaseUrl(e.target.value)}
-              className="w-full text-xs font-mono bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 focus:outline-none focus:border-aqua-500"
+              className="w-full text-xs font-mono bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 focus:outline-none focus:border-aqua-500 transition-colors"
             />
           </div>
 
           <div className="flex justify-end">
             <button
               type="submit"
-              className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow-sm transition-colors"
+              className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow-sm transition-all btn-press"
             >
               Save Configuration
             </button>

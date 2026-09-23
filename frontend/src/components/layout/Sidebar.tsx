@@ -40,7 +40,7 @@ export const Sidebar: React.FC = () => {
           muted
           playsInline
           onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-screen pointer-events-none z-0"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen pointer-events-none z-0"
         >
           <source src="/videos/ocean.mp4" type="video/mp4" />
         </video>
@@ -77,10 +77,9 @@ export const Sidebar: React.FC = () => {
               to={item.path}
               end={item.path === '/dashboard'}
               className={({ isActive }) =>
-                `flex items-center space-x-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
-                  isActive
-                    ? 'bg-[#0e3838] text-white shadow-sm border border-[#00c9a7]/20 font-semibold'
-                    : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]/80'
+                `flex items-center space-x-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:translate-x-1 ${isActive
+                  ? 'bg-[#0e3838] text-white shadow-sm border border-[#00c9a7]/20 font-semibold'
+                  : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]/80'
                 }`
               }
             >
@@ -100,10 +99,9 @@ export const Sidebar: React.FC = () => {
               key={item.label}
               to={item.path}
               className={({ isActive }) =>
-                `flex items-center space-x-3 px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${
-                  isActive
-                    ? 'bg-[#0e3838] text-white'
-                    : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]/80'
+                `flex items-center space-x-3 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:translate-x-1 ${isActive
+                  ? 'bg-[#0e3838] text-white'
+                  : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]/80'
                 }`
               }
             >
@@ -115,9 +113,9 @@ export const Sidebar: React.FC = () => {
       </div>
 
       {/* Ocean Banner Card at Bottom */}
-      <div className="relative z-10 p-3 m-3 mt-auto rounded-xl overflow-hidden border border-[#1a3344] bg-[#0c1a24]/85 backdrop-blur-sm shadow-inner group">
+      <div className="relative z-10 p-3 m-3 mt-auto rounded-xl overflow-hidden border border-[#1a3344] hover:border-[#00c9a7]/40 bg-[#0c1a24]/85 backdrop-blur-sm shadow-inner group card-subtle">
         <div className="p-2">
-          <div className="h-1 w-6 bg-[#00c9a7] rounded mb-2" />
+          <div className="h-1 w-6 bg-[#00c9a7] rounded mb-2 transition-all duration-300 group-hover:w-10" />
           <p className="text-xs font-semibold text-slate-200 leading-snug">
             Sustainable Shipping
           </p>

@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
         <button
           onClick={() => navigate('/fleet')}
           title="Add or Register Vessel"
-          className="w-9 h-9 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+          className="w-9 h-9 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all btn-press shadow-2xs"
         >
           <Plus className="w-4 h-4" />
         </button>
@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
         <div className="relative">
           <button
             onClick={() => setShowNotifications(!showNotifications)}
-            className="w-9 h-9 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-50 relative transition-colors"
+            className="w-9 h-9 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-100 relative transition-all btn-press shadow-2xs"
           >
             <Bell className="w-4 h-4" />
             <span className="absolute top-2 right-2 w-2 h-2 bg-rose-500 rounded-full ring-2 ring-white" />
@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
         <div className="relative">
           <button
             onClick={() => setShowProfileMenu(!showProfileMenu)}
-            className="flex items-center space-x-3 pl-2 pr-1 py-1 rounded-lg hover:bg-slate-50 transition-colors text-left"
+            className="flex items-center space-x-3 pl-2 pr-2 py-1 rounded-lg hover:bg-slate-100 transition-all btn-press text-left"
           >
             <div className="w-9 h-9 rounded-full bg-[#0a1b24] text-white flex items-center justify-center font-semibold text-xs border border-slate-700">
               {user?.initials || 'AK'}

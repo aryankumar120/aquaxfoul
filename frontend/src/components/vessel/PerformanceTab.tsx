@@ -21,7 +21,7 @@ export const PerformanceTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
     <div className="space-y-6">
       {/* Current Operational Metrics */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default">
           <div className="flex items-center space-x-2 text-slate-400 text-xs font-medium">
             <Gauge className="w-4 h-4 text-aqua-600" />
             <span>Operational Speed</span>
@@ -32,7 +32,7 @@ export const PerformanceTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
           <div className="text-[11px] text-emerald-600 font-semibold mt-1">Design baseline: 20.0 kn</div>
         </div>
 
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default">
           <div className="flex items-center space-x-2 text-slate-400 text-xs font-medium">
             <Flame className="w-4 h-4 text-amber-500" />
             <span>Daily Fuel Burn</span>
@@ -43,7 +43,7 @@ export const PerformanceTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
           <div className="text-[11px] text-slate-500 mt-1">VLSFO Heavy Fuel Oil</div>
         </div>
 
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default">
           <div className="flex items-center space-x-2 text-slate-400 text-xs font-medium">
             <Activity className="w-4 h-4 text-blue-500" />
             <span>Apparent Slip Ratio</span>
@@ -54,7 +54,7 @@ export const PerformanceTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
           <div className="text-[11px] text-slate-500 mt-1">Normal hydrodynamic slip window</div>
         </div>
 
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default">
           <div className="flex items-center space-x-2 text-slate-400 text-xs font-medium">
             <Wind className="w-4 h-4 text-emerald-500" />
             <span>Fouling Fuel Penalty</span>
@@ -67,7 +67,7 @@ export const PerformanceTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
       </div>
 
       {/* Historical Telemetry Table */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-6">
         <h3 className="text-sm font-bold text-slate-900 mb-4">
           Historical Speed & Fuel Telemetry Logs
         </h3>
@@ -86,7 +86,7 @@ export const PerformanceTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             </thead>
             <tbody className="divide-y divide-slate-100 text-slate-700">
               {records.map((r) => (
-                <tr key={r.id} className="hover:bg-slate-50/80">
+                <tr key={r.id} className="hover:bg-slate-50/90 transition-all duration-150">
                   <td className="py-3 px-4 font-mono text-slate-500">{r.date}</td>
                   <td className="py-3 px-4 font-semibold text-slate-900">{r.speedKnots} kn</td>
                   <td className="py-3 px-4 font-mono">{r.fuelConsumptionTonsPerDay} t</td>

@@ -59,7 +59,7 @@ export const ReportsPage: React.FC = () => {
       </div>
 
       {/* Reports Table Card */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+      <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-6 space-y-4">
         {/* Filter row */}
         <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
           <div className="flex items-center space-x-2 text-xs">
@@ -69,9 +69,9 @@ export const ReportsPage: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => setSelectedType(cat)}
-                  className={`px-3 py-1 rounded-md transition-colors ${
+                  className={`px-3 py-1 rounded-md transition-all btn-press ${
                     selectedType === cat
-                      ? 'bg-slate-900 text-white font-medium'
+                      ? 'bg-slate-900 text-white font-medium shadow-xs'
                       : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                 >
@@ -97,7 +97,7 @@ export const ReportsPage: React.FC = () => {
             </thead>
             <tbody className="divide-y divide-slate-100 text-slate-700 font-medium">
               {filtered.map((r) => (
-                <tr key={r.id} className="hover:bg-slate-50/80 transition-colors">
+                <tr key={r.id} className="hover:bg-slate-50/90 transition-all duration-150">
                   <td className="py-3.5 px-4 font-semibold text-slate-900">
                     <div className="flex items-center space-x-2">
                       <FileText className="w-4 h-4 text-slate-400" />
@@ -116,7 +116,7 @@ export const ReportsPage: React.FC = () => {
                     <button
                       onClick={() => handleDownload(r)}
                       disabled={downloadingId === r.id}
-                      className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition-colors disabled:opacity-50"
+                      className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition-all btn-press disabled:opacity-50"
                     >
                       <Download className="w-3.5 h-3.5" />
                       <span>{downloadingId === r.id ? 'Exporting...' : 'Download'}</span>

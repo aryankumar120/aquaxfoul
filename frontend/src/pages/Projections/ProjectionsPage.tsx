@@ -63,7 +63,7 @@ export const ProjectionsPage: React.FC = () => {
       ) : (
         <>
           {/* Recommendation Banner */}
-          <div className="bg-gradient-to-r from-emerald-50 via-teal-50/50 to-white rounded-xl border border-emerald-200/80 p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="bg-gradient-to-r from-emerald-50 via-teal-50/50 to-white rounded-xl border border-emerald-200/80 p-6 shadow-card card-subtle flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="flex items-center space-x-2">
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-600 text-white">
@@ -86,7 +86,7 @@ export const ProjectionsPage: React.FC = () => {
           </div>
 
           {/* Chart Card */}
-          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+          <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div>
                 <h3 className="text-sm font-bold text-slate-900">
@@ -100,7 +100,7 @@ export const ProjectionsPage: React.FC = () => {
               <div className="flex items-center space-x-1.5 bg-slate-100 p-1 rounded-lg text-xs font-medium">
                 <button
                   onClick={() => setActiveScenario('all')}
-                  className={`px-3 py-1 rounded-md transition-colors ${
+                  className={`px-3 py-1 rounded-md transition-all btn-press ${
                     activeScenario === 'all'
                       ? 'bg-white text-slate-900 shadow-sm font-semibold'
                       : 'text-slate-600 hover:text-slate-900'
@@ -110,7 +110,7 @@ export const ProjectionsPage: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setActiveScenario('no-cleaning')}
-                  className={`px-3 py-1 rounded-md transition-colors ${
+                  className={`px-3 py-1 rounded-md transition-all btn-press ${
                     activeScenario === 'no-cleaning'
                       ? 'bg-rose-600 text-white shadow-sm font-semibold'
                       : 'text-slate-600 hover:text-slate-900'
@@ -120,7 +120,7 @@ export const ProjectionsPage: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setActiveScenario('clean-now')}
-                  className={`px-3 py-1 rounded-md transition-colors ${
+                  className={`px-3 py-1 rounded-md transition-all btn-press ${
                     activeScenario === 'clean-now'
                       ? 'bg-emerald-600 text-white shadow-sm font-semibold'
                       : 'text-slate-600 hover:text-slate-900'
@@ -130,7 +130,7 @@ export const ProjectionsPage: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setActiveScenario('clean-later')}
-                  className={`px-3 py-1 rounded-md transition-colors ${
+                  className={`px-3 py-1 rounded-md transition-all btn-press ${
                     activeScenario === 'clean-later'
                       ? 'bg-blue-600 text-white shadow-sm font-semibold'
                       : 'text-slate-600 hover:text-slate-900'
@@ -146,7 +146,7 @@ export const ProjectionsPage: React.FC = () => {
 
           {/* Scenario Comparison Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl border border-rose-200 p-5 shadow-sm space-y-2">
+            <div className="bg-white rounded-xl border border-rose-200 p-5 shadow-card card-hover space-y-2 cursor-default">
               <div className="font-bold text-rose-700 text-sm">Scenario A: No Cleaning</div>
               <p className="text-xs text-slate-500">Continuous hull roughness degradation without intervention.</p>
               <div className="pt-2 border-t border-slate-100 text-xs space-y-1">
@@ -165,7 +165,7 @@ export const ProjectionsPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl border border-emerald-300 p-5 shadow-sm space-y-2 ring-1 ring-emerald-400">
+            <div className="bg-white rounded-xl border border-emerald-300 p-5 shadow-card card-hover space-y-2 ring-1 ring-emerald-400 cursor-default">
               <div className="font-bold text-emerald-700 text-sm">Scenario B: Clean Now</div>
               <p className="text-xs text-slate-500">Immediate in-water robotic cleaning restoring smooth hydrodynamics.</p>
               <div className="pt-2 border-t border-slate-100 text-xs space-y-1">
@@ -188,7 +188,7 @@ export const ProjectionsPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl border border-blue-200 p-5 shadow-sm space-y-2">
+            <div className="bg-white rounded-xl border border-blue-200 p-5 shadow-card card-hover space-y-2 cursor-default">
               <div className="font-bold text-blue-700 text-sm">Scenario C: Clean Later</div>
               <p className="text-xs text-slate-500">Deferred intervention synchronized with scheduled Q1 dry docking.</p>
               <div className="pt-2 border-t border-slate-100 text-xs space-y-1">

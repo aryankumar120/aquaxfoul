@@ -116,10 +116,17 @@ export const ProjectionsTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
       {/* Scenario Comparison Matrix Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Scenario A: No Cleaning */}
-        <div className="bg-white rounded-xl border-2 border-rose-200 p-5 shadow-sm space-y-3 relative">
+        <div
+          onClick={() => setSelectedScenario('no-cleaning')}
+          className={`bg-white rounded-xl border-2 border-rose-200 p-5 shadow-card card-hover cursor-pointer space-y-3 relative transition-all duration-300 ${
+            selectedScenario === 'no-cleaning' ? 'ring-2 ring-rose-500/30 -translate-y-1' : ''
+          }`}
+        >
           <div className="flex items-center justify-between">
-            <h4 className="font-bold text-slate-900 text-sm">{scenarios.noCleaning.scenarioName}</h4>
-            <span className="p-1 rounded bg-rose-100 text-rose-700">
+            <h4 className="font-bold text-slate-900 text-sm group-hover:text-rose-700 transition-colors">
+              {scenarios.noCleaning.scenarioName}
+            </h4>
+            <span className="p-1.5 rounded-lg bg-rose-100 text-rose-700">
               <AlertTriangle className="w-4 h-4" />
             </span>
           </div>
@@ -148,10 +155,17 @@ export const ProjectionsTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
         </div>
 
         {/* Scenario B: Clean Now */}
-        <div className="bg-white rounded-xl border-2 border-emerald-300 p-5 shadow-sm space-y-3 relative ring-2 ring-emerald-500/10">
+        <div
+          onClick={() => setSelectedScenario('clean-now')}
+          className={`bg-white rounded-xl border-2 border-emerald-300 p-5 shadow-card card-hover cursor-pointer space-y-3 relative transition-all duration-300 ring-2 ring-emerald-500/10 ${
+            selectedScenario === 'clean-now' ? 'ring-2 ring-emerald-500/30 -translate-y-1' : ''
+          }`}
+        >
           <div className="flex items-center justify-between">
-            <h4 className="font-bold text-slate-900 text-sm">{scenarios.cleanNow.scenarioName}</h4>
-            <span className="p-1 rounded bg-emerald-100 text-emerald-700">
+            <h4 className="font-bold text-slate-900 text-sm group-hover:text-emerald-700 transition-colors">
+              {scenarios.cleanNow.scenarioName}
+            </h4>
+            <span className="p-1.5 rounded-lg bg-emerald-100 text-emerald-700">
               <CheckCircle2 className="w-4 h-4" />
             </span>
           </div>
@@ -180,10 +194,17 @@ export const ProjectionsTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
         </div>
 
         {/* Scenario C: Clean Later */}
-        <div className="bg-white rounded-xl border-2 border-blue-200 p-5 shadow-sm space-y-3 relative">
+        <div
+          onClick={() => setSelectedScenario('clean-later')}
+          className={`bg-white rounded-xl border-2 border-blue-200 p-5 shadow-card card-hover cursor-pointer space-y-3 relative transition-all duration-300 ${
+            selectedScenario === 'clean-later' ? 'ring-2 ring-blue-500/30 -translate-y-1' : ''
+          }`}
+        >
           <div className="flex items-center justify-between">
-            <h4 className="font-bold text-slate-900 text-sm">{scenarios.cleanLater.scenarioName}</h4>
-            <span className="p-1 rounded bg-blue-100 text-blue-700">
+            <h4 className="font-bold text-slate-900 text-sm group-hover:text-blue-700 transition-colors">
+              {scenarios.cleanLater.scenarioName}
+            </h4>
+            <span className="p-1.5 rounded-lg bg-blue-100 text-blue-700">
               <TrendingDown className="w-4 h-4" />
             </span>
           </div>

@@ -15,7 +15,7 @@ export const HelpPage: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-3">
+        <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default p-6 space-y-3">
           <div className="w-10 h-10 rounded-lg bg-aqua-50 text-aqua-600 flex items-center justify-center">
             <BookOpen className="w-5 h-5" />
           </div>
@@ -25,7 +25,7 @@ export const HelpPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-3">
+        <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default p-6 space-y-3">
           <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
             <FileCode2 className="w-5 h-5" />
           </div>
@@ -36,7 +36,7 @@ export const HelpPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+      <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-6 space-y-4">
         <h2 className="text-sm font-bold text-slate-900 flex items-center space-x-2">
           <LifeBuoy className="w-4 h-4 text-aqua-600" />
           <span>Operational Support & Contact</span>
@@ -44,7 +44,7 @@ export const HelpPage: React.FC = () => {
         <p className="text-xs text-slate-500">
           For technical fleet inquiries or support regarding Aqua-X-Foul deployments:
         </p>
-        <div className="text-xs font-mono text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100">
+        <div className="text-xs font-mono text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100 card-subtle hover:bg-white">
           Email: <b className="text-slate-900">aquaxfoul@gmail.com</b>
         </div>
       </div>

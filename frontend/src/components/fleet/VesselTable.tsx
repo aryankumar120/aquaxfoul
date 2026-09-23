@@ -31,7 +31,7 @@ export const VesselTable: React.FC<VesselTableProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+    <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse text-xs">
           <thead>
@@ -83,7 +83,7 @@ export const VesselTable: React.FC<VesselTableProps> = ({
               <tr
                 key={v.id}
                 onClick={() => navigate(`/vessels/${v.id}`)}
-                className="hover:bg-slate-50/80 cursor-pointer transition-colors group"
+                className="hover:bg-slate-50/90 cursor-pointer transition-all duration-150 group"
               >
                 <td className="py-3 px-4 text-slate-500 font-mono">{v.imo}</td>
                 <td className="py-3 px-4 font-bold text-slate-900 group-hover:text-aqua-600 transition-colors">
@@ -106,7 +106,7 @@ export const VesselTable: React.FC<VesselTableProps> = ({
                       e.stopPropagation();
                       navigate(`/vessels/${v.id}`);
                     }}
-                    className="p-1 rounded hover:bg-slate-200 text-slate-500 hover:text-slate-900 transition-colors"
+                    className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-all btn-press"
                     title="View Vessel Details"
                   >
                     <Eye className="w-4 h-4" />

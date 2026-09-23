@@ -65,14 +65,14 @@ export const DashboardPage: React.FC = () => {
       {/* 3. Middle Visualizations Grid (3 Columns) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         {/* Vessel Distribution Donut */}
-        <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
+        <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200/90 shadow-card card-hover p-6 flex flex-col justify-between group">
           <div className="flex items-center justify-between mb-2">
-            <h2 className="text-base font-bold text-slate-900 tracking-tight">
+            <h2 className="text-base font-bold text-slate-900 tracking-tight group-hover:text-aqua-700 transition-colors">
               Vessel Distribution by Type
             </h2>
             <button
               onClick={() => navigate('/fleet')}
-              className="text-xs font-semibold text-aqua-600 hover:text-aqua-700 flex items-center space-x-1 transition-colors"
+              className="text-xs font-semibold text-aqua-600 hover:text-aqua-700 flex items-center space-x-1 transition-all duration-200 group-hover:translate-x-0.5 btn-press"
             >
               <span>View all</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -85,14 +85,14 @@ export const DashboardPage: React.FC = () => {
         </div>
 
         {/* Fouling Risk Distribution Bars */}
-        <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
+        <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200/90 shadow-card card-hover p-6 flex flex-col justify-between group">
           <div className="flex items-center justify-between mb-2">
-            <h2 className="text-base font-bold text-slate-900 tracking-tight">
+            <h2 className="text-base font-bold text-slate-900 tracking-tight group-hover:text-aqua-700 transition-colors">
               Fouling Risk Distribution
             </h2>
             <button
               onClick={() => navigate('/fouling')}
-              className="text-xs font-semibold text-aqua-600 hover:text-aqua-700 flex items-center space-x-1 transition-colors"
+              className="text-xs font-semibold text-aqua-600 hover:text-aqua-700 flex items-center space-x-1 transition-all duration-200 group-hover:translate-x-0.5 btn-press"
             >
               <span>View all</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -102,7 +102,7 @@ export const DashboardPage: React.FC = () => {
         </div>
 
         {/* Fuel Consumption Trend Line */}
-        <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
+        <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200/90 shadow-card card-hover p-6 flex flex-col justify-between group">
           <FuelConsumptionTrendChart data={data.fuelConsumptionTrend} />
         </div>
       </div>

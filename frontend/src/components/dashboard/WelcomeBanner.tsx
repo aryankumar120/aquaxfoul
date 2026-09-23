@@ -8,23 +8,15 @@ export const WelcomeBanner: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const periods = ['Last 30 days', 'Last 3 months', 'Last 6 months', 'Last 12 months', 'Year to Date'];
-
-  // Current or mock maritime date
   const displayDate = 'Fri, 19 Sep 2026';
 
   return (
-    <div className="relative bg-gradient-to-r from-white via-white to-sky-50/50 rounded-2xl p-6 border border-slate-200/90 shadow-sm overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-6">
-      {/* Subtle background cargo ship silhouette */}
-      <div className="absolute right-36 bottom-0 top-0 pointer-events-none opacity-15 hidden lg:flex items-center">
+    <div className="relative bg-gradient-to-r from-white via-white to-sky-50/50 rounded-2xl p-6 border border-slate-200/90 shadow-card card-subtle overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+      {/* Subtle background cargo ship silhouette with gentle hover parallax */}
+      <div className="absolute right-36 bottom-0 top-0 pointer-events-none opacity-15 hidden lg:flex items-center group-hover:translate-x-1 transition-transform duration-500 ease-out">
         <svg width="280" height="90" viewBox="0 0 280 90" fill="none">
-          <path
-            d="M10 75H270L250 85H30L10 75Z"
-            fill="#0284c7"
-          />
-          <path
-            d="M35 75L45 55H225L235 75H35Z"
-            fill="#0369a1"
-          />
+          <path d="M10 75H270L250 85H30L10 75Z" fill="#0284c7" />
+          <path d="M35 75L45 55H225L235 75H35Z" fill="#0369a1" />
           <rect x="55" y="38" width="18" height="17" rx="1" fill="#00c9a7" />
           <rect x="76" y="38" width="18" height="17" rx="1" fill="#0284c7" />
           <rect x="97" y="38" width="18" height="17" rx="1" fill="#f97316" />
@@ -68,7 +60,7 @@ export const WelcomeBanner: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="inline-flex items-center space-x-2 px-3.5 py-2 bg-white hover:bg-slate-50 text-xs font-medium text-slate-700 border border-slate-200 rounded-lg shadow-sm transition-colors"
+            className="inline-flex items-center space-x-2 px-3.5 py-2 bg-white hover:bg-slate-50 text-xs font-medium text-slate-700 border border-slate-200 rounded-lg shadow-xs hover:border-slate-300 transition-all btn-press"
           >
             <Calendar className="w-3.5 h-3.5 text-slate-500" />
             <span>{period}</span>
@@ -76,7 +68,7 @@ export const WelcomeBanner: React.FC = () => {
           </button>
 
           {isDropdownOpen && (
-            <div className="absolute right-0 mt-2 w-44 bg-white rounded-xl shadow-dropdown border border-slate-200 py-1.5 z-40">
+            <div className="absolute right-0 mt-2 w-44 bg-white rounded-xl shadow-dropdown border border-slate-200 py-1.5 z-40 animate-in fade-in zoom-in-95 duration-100">
               {periods.map((p) => (
                 <button
                   key={p}

@@ -1,20 +1,20 @@
 import React from 'react';
 import { Vessel } from '../../types';
-import { ShieldCheck, Anchor, Compass, Calendar, AlertTriangle } from 'lucide-react';
+import { ShieldCheck, Anchor, Compass } from 'lucide-react';
 import { StatusBadge } from '../common/StatusBadge';
 
 export const OverviewTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
   return (
     <div className="space-y-6">
       {/* Biofouling Health Banner */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+      <div className="bg-white rounded-xl border border-slate-200/90 p-6 shadow-card card-subtle">
         <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center space-x-2">
           <ShieldCheck className="w-4 h-4 text-aqua-600" />
           <span>Biofouling Operational Condition</span>
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 card-subtle">
             <span className="text-xs text-slate-500 font-medium">Biofouling Index</span>
             <div className="text-2xl font-extrabold text-slate-900 mt-1 flex items-baseline gap-1">
               <span>{vessel.foulingRating}%</span>
@@ -22,7 +22,7 @@ export const OverviewTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             </div>
             <div className="w-full bg-slate-200 h-2 rounded-full mt-3 overflow-hidden">
               <div
-                className={`h-full rounded-full ${
+                className={`h-full rounded-full transition-all duration-500 ${
                   vessel.foulingRating > 60
                     ? 'bg-rose-500'
                     : vessel.foulingRating > 30
@@ -34,7 +34,7 @@ export const OverviewTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             </div>
           </div>
 
-          <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 card-subtle">
             <span className="text-xs text-slate-500 font-medium">Assessed Risk Tier</span>
             <div className="mt-2">
               <StatusBadge type="risk" value={vessel.foulingRisk} />
@@ -44,7 +44,7 @@ export const OverviewTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             </p>
           </div>
 
-          <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 card-subtle">
             <span className="text-xs text-slate-500 font-medium">Last Inspection</span>
             <div className="text-base font-bold text-slate-800 mt-1 font-mono">
               {vessel.lastInspectionDate}
@@ -52,7 +52,7 @@ export const OverviewTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             <p className="text-[11px] text-slate-400 mt-2">Verified via underwater drone video.</p>
           </div>
 
-          <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 card-subtle">
             <span className="text-xs text-slate-500 font-medium">Next Cleaning Target</span>
             <div className="text-base font-bold text-slate-800 mt-1 font-mono">
               {vessel.nextCleaningDueDate}
@@ -65,7 +65,7 @@ export const OverviewTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
       {/* Primary Details Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Identification */}
-        <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div className="bg-white rounded-xl border border-slate-200/90 p-6 shadow-card card-subtle">
           <h3 className="text-sm font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center space-x-2">
             <Anchor className="w-4 h-4 text-slate-600" />
             <span>Vessel Identification</span>
@@ -92,7 +92,7 @@ export const OverviewTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
         </div>
 
         {/* Capacity Particulars */}
-        <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div className="bg-white rounded-xl border border-slate-200/90 p-6 shadow-card card-subtle">
           <h3 className="text-sm font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center space-x-2">
             <Compass className="w-4 h-4 text-slate-600" />
             <span>Capacities & Dimensions</span>

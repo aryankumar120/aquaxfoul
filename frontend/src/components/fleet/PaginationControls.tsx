@@ -53,7 +53,7 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
           <button
             onClick={() => onPageChange(page - 1)}
             disabled={page <= 1}
-            className="p-1.5 rounded border border-slate-200 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            className="p-1.5 rounded-lg border border-slate-200 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all btn-press"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
@@ -65,7 +65,7 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
           <button
             onClick={() => onPageChange(page + 1)}
             disabled={page >= totalPages}
-            className="p-1.5 rounded border border-slate-200 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            className="p-1.5 rounded-lg border border-slate-200 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all btn-press"
           >
             <ChevronRight className="w-4 h-4" />
           </button>

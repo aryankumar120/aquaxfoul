@@ -21,7 +21,7 @@ export const CleaningTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
     <div className="space-y-6">
       {/* Cleaning Overview Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center space-x-4">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default flex items-center space-x-4">
           <div className="w-12 h-12 rounded-xl bg-aqua-50 text-aqua-600 flex items-center justify-center shrink-0">
             <Sparkles className="w-6 h-6" />
           </div>
@@ -32,7 +32,7 @@ export const CleaningTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
           </div>
         </div>
 
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center space-x-4">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default flex items-center space-x-4">
           <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
             <Leaf className="w-6 h-6" />
           </div>
@@ -43,7 +43,7 @@ export const CleaningTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
           </div>
         </div>
 
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center space-x-4">
+        <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-card card-hover cursor-default flex items-center space-x-4">
           <div className="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
             <DollarSign className="w-6 h-6" />
           </div>
@@ -56,7 +56,7 @@ export const CleaningTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
       </div>
 
       {/* Cleaning History Records */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+      <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-6">
         <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center space-x-2">
           <Droplet className="w-4 h-4 text-aqua-600" />
           <span>Hull Cleaning & Propeller Polishing Log</span>
@@ -64,7 +64,7 @@ export const CleaningTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
 
         <div className="space-y-4">
           {cleanings.map((c) => (
-            <div key={c.id} className="border border-slate-200 rounded-xl p-5 bg-slate-50/50 text-xs space-y-3">
+            <div key={c.id} className="border border-slate-200 rounded-xl p-5 bg-slate-50/50 text-xs space-y-3 card-subtle hover:bg-white hover:border-slate-300">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-200/80">
                 <div>
                   <div className="flex items-center space-x-2">

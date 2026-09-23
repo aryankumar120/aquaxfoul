@@ -39,7 +39,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     filters.maxDwt;
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm space-y-4">
+    <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-5 space-y-4">
       {/* Top Search & Filter Summary */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         {/* Search */}
@@ -62,7 +62,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           {hasActiveFilters && (
             <button
               onClick={onReset}
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors font-medium"
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-lg transition-all btn-press font-medium shadow-2xs"
             >
               <RotateCcw className="w-3.5 h-3.5 text-slate-500" />
               <span>Reset</span>

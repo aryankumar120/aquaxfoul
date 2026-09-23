@@ -52,10 +52,10 @@ export const FoulingPage: React.FC = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div
           onClick={() => setSelectedRisk('Critical')}
-          className={`p-4 rounded-xl border cursor-pointer transition-all ${
+          className={`p-5 rounded-xl border cursor-pointer card-hover shadow-card ${
             selectedRisk === 'Critical'
-              ? 'bg-rose-50 border-rose-300 ring-2 ring-rose-500/20'
-              : 'bg-white border-slate-200 hover:border-slate-300'
+              ? 'bg-rose-50/90 border-rose-300 ring-2 ring-rose-500/30 -translate-y-1'
+              : 'bg-white border-slate-200/90 hover:border-rose-200'
           }`}
         >
           <div className="flex items-center justify-between text-xs text-rose-600 font-semibold">
@@ -68,10 +68,10 @@ export const FoulingPage: React.FC = () => {
 
         <div
           onClick={() => setSelectedRisk('High')}
-          className={`p-4 rounded-xl border cursor-pointer transition-all ${
+          className={`p-5 rounded-xl border cursor-pointer card-hover shadow-card ${
             selectedRisk === 'High'
-              ? 'bg-amber-50 border-amber-300 ring-2 ring-amber-500/20'
-              : 'bg-white border-slate-200 hover:border-slate-300'
+              ? 'bg-amber-50/90 border-amber-300 ring-2 ring-amber-500/30 -translate-y-1'
+              : 'bg-white border-slate-200/90 hover:border-amber-200'
           }`}
         >
           <div className="flex items-center justify-between text-xs text-amber-600 font-semibold">
@@ -84,10 +84,10 @@ export const FoulingPage: React.FC = () => {
 
         <div
           onClick={() => setSelectedRisk('Moderate')}
-          className={`p-4 rounded-xl border cursor-pointer transition-all ${
+          className={`p-5 rounded-xl border cursor-pointer card-hover shadow-card ${
             selectedRisk === 'Moderate'
-              ? 'bg-blue-50 border-blue-300 ring-2 ring-blue-500/20'
-              : 'bg-white border-slate-200 hover:border-slate-300'
+              ? 'bg-blue-50/90 border-blue-300 ring-2 ring-blue-500/30 -translate-y-1'
+              : 'bg-white border-slate-200/90 hover:border-blue-200'
           }`}
         >
           <div className="flex items-center justify-between text-xs text-blue-600 font-semibold">
@@ -100,10 +100,10 @@ export const FoulingPage: React.FC = () => {
 
         <div
           onClick={() => setSelectedRisk('Low')}
-          className={`p-4 rounded-xl border cursor-pointer transition-all ${
+          className={`p-5 rounded-xl border cursor-pointer card-hover shadow-card ${
             selectedRisk === 'Low'
-              ? 'bg-emerald-50 border-emerald-300 ring-2 ring-emerald-500/20'
-              : 'bg-white border-slate-200 hover:border-slate-300'
+              ? 'bg-emerald-50/90 border-emerald-300 ring-2 ring-emerald-500/30 -translate-y-1'
+              : 'bg-white border-slate-200/90 hover:border-emerald-200'
           }`}
         >
           <div className="flex items-center justify-between text-xs text-emerald-600 font-semibold">
@@ -116,7 +116,7 @@ export const FoulingPage: React.FC = () => {
       </div>
 
       {/* Filter and Table */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+      <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-6 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="relative max-w-sm w-full">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />

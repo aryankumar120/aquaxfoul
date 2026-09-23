@@ -5,7 +5,7 @@ import { Building2, Globe2, FileCheck, ShieldCheck } from 'lucide-react';
 export const ManagementTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
   return (
     <div className="space-y-6">
-      <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+      <div className="bg-white rounded-xl border border-slate-200/90 p-6 shadow-card card-subtle">
         <h2 className="text-base font-bold text-slate-900 tracking-tight mb-2">
           Management & Governance Registry
         </h2>
@@ -14,7 +14,7 @@ export const ManagementTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60 space-y-4">
+          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60 space-y-4 card-subtle hover:bg-white">
             <div className="flex items-center space-x-2 text-slate-800 font-bold text-xs uppercase tracking-wider pb-2 border-b border-slate-200/80">
               <Building2 className="w-4 h-4 text-aqua-600" />
               <span>Technical Management Organization</span>
@@ -43,7 +43,7 @@ export const ManagementTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
             </dl>
           </div>
 
-          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60 space-y-4">
+          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60 space-y-4 card-subtle hover:bg-white">
             <div className="flex items-center space-x-2 text-slate-800 font-bold text-xs uppercase tracking-wider pb-2 border-b border-slate-200/80">
               <FileCheck className="w-4 h-4 text-aqua-600" />
               <span>Compliance & Biofouling Management Plan (BMP)</span>

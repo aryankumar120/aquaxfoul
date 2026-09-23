@@ -5,7 +5,7 @@ import { Layers, Settings2, Cpu, Wrench } from 'lucide-react';
 export const TechnicalTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
   return (
     <div className="space-y-6">
-      <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+      <div className="bg-white rounded-xl border border-slate-200/90 p-6 shadow-card card-subtle">
         <h2 className="text-base font-bold text-slate-900 tracking-tight mb-2">
           Structured Vessel Particulars
         </h2>
@@ -15,7 +15,7 @@ export const TechnicalTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Group 1: Identification */}
-          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60">
+          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60 card-subtle hover:bg-white">
             <div className="flex items-center space-x-2 text-slate-800 font-bold text-xs uppercase tracking-wider mb-4 pb-2 border-b border-slate-200/80">
               <Layers className="w-4 h-4 text-aqua-600" />
               <span>Identification</span>
@@ -41,7 +41,7 @@ export const TechnicalTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
           </div>
 
           {/* Group 2: Capacity & Tonnage */}
-          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60">
+          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60 card-subtle hover:bg-white">
             <div className="flex items-center space-x-2 text-slate-800 font-bold text-xs uppercase tracking-wider mb-4 pb-2 border-b border-slate-200/80">
               <Settings2 className="w-4 h-4 text-aqua-600" />
               <span>Capacity & Parameters</span>
@@ -75,7 +75,7 @@ export const TechnicalTab: React.FC<{ vessel: Vessel }> = ({ vessel }) => {
           </div>
 
           {/* Group 3: Engineering & Coating */}
-          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60">
+          <div className="border border-slate-100 rounded-xl p-5 bg-slate-50/60 card-subtle hover:bg-white">
             <div className="flex items-center space-x-2 text-slate-800 font-bold text-xs uppercase tracking-wider mb-4 pb-2 border-b border-slate-200/80">
               <Wrench className="w-4 h-4 text-aqua-600" />
               <span>Hull & Propulsion</span>
