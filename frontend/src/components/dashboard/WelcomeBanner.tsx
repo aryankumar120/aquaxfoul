@@ -1,34 +1,25 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Calendar, ChevronDown } from 'lucide-react';
+import React from 'react';
+import { Calendar } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { useDateRange } from '../../context/DateRangeContext';
 
 export const WelcomeBanner: React.FC = () => {
   const { user } = useAuth();
-  const [period, setPeriod] = useState('Last 6 months');
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const { period, setPeriod } = useDateRange();
 
-  const periods = ['Last 30 days', 'Last 3 months', 'Last 6 months', 'Last 12 months', 'Year to Date'];
   const displayDate = 'Fri, 19 Sep 2026';
 
-  // Close dropdown on click outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
-      }
-    };
-    if (isDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isDropdownOpen]);
+  const pillOptions = [
+    { label: '30D', value: 'Last 30 days', title: 'Last 30 days' },
+    { label: '3M', value: 'Last 3 months', title: 'Last 3 months' },
+    { label: '6M', value: 'Last 6 months', title: 'Last 6 months' },
+    { label: '1Y', value: 'Last 12 months', title: 'Last 12 months' },
+    { label: 'YTD', value: 'Year to Date', title: 'Year to Date' },
+  ];
 
   return (
-    <div className="relative z-20 bg-gradient-to-r from-white via-white to-sky-50/50 rounded-2xl p-6 border border-slate-200/90 shadow-card card-subtle flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-      {/* Background decorations safely clipped to rounded corners without clipping dropdowns */}
+    <div className="relative z-10 bg-gradient-to-r from-white via-white to-sky-50/50 rounded-2xl p-6 border border-slate-200/90 shadow-card card-subtle flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+      {/* Background decorations safely clipped to rounded corners */}
       <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
         {/* Subtle background cargo ship silhouette with gentle hover parallax */}
         <div className="absolute right-36 bottom-0 top-0 opacity-15 hidden lg:flex items-center group-hover:translate-x-1 transition-transform duration-500 ease-out">
@@ -70,41 +61,31 @@ export const WelcomeBanner: React.FC = () => {
         </div>
 
         {/* Date string */}
-        <div className="text-xs font-medium text-slate-500 hidden sm:block">
-          {displayDate}
+        <div className="text-xs font-medium text-slate-500 hidden sm:flex items-center space-x-1.5">
+          <Calendar className="w-3.5 h-3.5 text-slate-400" />
+          <span>{displayDate}</span>
         </div>
 
-        {/* Period Dropdown */}
-        <div className="relative" ref={dropdownRef}>
-          <button
-            type="button"
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="inline-flex items-center space-x-2 px-3.5 py-2 bg-white hover:bg-slate-50 text-xs font-medium text-slate-700 border border-slate-200 rounded-lg shadow-xs hover:border-slate-300 transition-all btn-press"
-          >
-            <Calendar className="w-3.5 h-3.5 text-slate-500" />
-            <span>{period}</span>
-            <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
-          </button>
-
-          {isDropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-dropdown border border-slate-200 py-1.5 z-50 animate-in fade-in zoom-in-95 duration-100">
-              {periods.map((p) => (
-                <button
-                  key={p}
-                  type="button"
-                  onClick={() => {
-                    setPeriod(p);
-                    setIsDropdownOpen(false);
-                  }}
-                  className={`w-full text-left px-3.5 py-2 text-xs transition-colors ${
-                    p === period ? 'bg-aqua-50 text-aqua-700 font-semibold' : 'text-slate-600 hover:bg-slate-50'
-                  }`}
-                >
-                  {p}
-                </button>
-              ))}
-            </div>
-          )}
+        {/* Inline Segmented Period Switcher (Zero overlap on cards below) */}
+        <div className="inline-flex items-center p-1 bg-slate-100/90 rounded-xl border border-slate-200/80 shadow-2xs">
+          {pillOptions.map((opt) => {
+            const isActive = period === opt.value;
+            return (
+              <button
+                key={opt.value}
+                type="button"
+                title={opt.title}
+                onClick={() => setPeriod(opt.value)}
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all btn-press ${
+                  isActive
+                    ? 'bg-white text-slate-900 shadow-sm border border-slate-200/60 font-bold'
+                    : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
+                }`}
+              >
+                {opt.label}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

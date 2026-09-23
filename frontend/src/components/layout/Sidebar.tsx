@@ -79,7 +79,7 @@ export const Sidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center space-x-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:translate-x-1 ${isActive
                   ? 'bg-[#0e3838] text-white shadow-sm border border-[#00c9a7]/20 font-semibold'
-                  : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]/80'
+                  : 'text-slate-400 hover:text-slate-100 hover:bg-[#cfd2d4]/20'
                 }`
               }
             >
@@ -101,7 +101,7 @@ export const Sidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center space-x-3 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:translate-x-1 ${isActive
                   ? 'bg-[#0e3838] text-white'
-                  : 'text-slate-400 hover:text-slate-100 hover:bg-[#12202a]/80'
+                  : 'text-slate-400 hover:text-slate-100 hover:bg-[#cfd2d4]/20'
                 }`
               }
             >

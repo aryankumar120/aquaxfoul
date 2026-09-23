@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AuthProvider } from './context/AuthContext';
+import { DateRangeProvider } from './context/DateRangeContext';
 import { AppRoutes } from './routes/AppRoutes';
 
 const queryClient = new QueryClient({
@@ -17,9 +18,11 @@ export const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
+        <DateRangeProvider>
+          <BrowserRouter>
+            <AppRoutes />
+          </BrowserRouter>
+        </DateRangeProvider>
       </AuthProvider>
     </QueryClientProvider>
   );
