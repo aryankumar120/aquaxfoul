@@ -63,9 +63,7 @@ export const Sidebar: React.FC = () => {
             <div className="text-white font-bold text-lg tracking-tight leading-none flex items-center gap-1">
               Aqua-X-Foul
             </div>
-            <div className="text-[10px] text-slate-400 font-medium tracking-wide mt-1">
-              Cleaner Vessels. <span className="text-[#00c9a7]">Greener Oceans.</span>
-            </div>
+
           </div>
         </div>
 

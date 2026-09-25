@@ -52,11 +52,10 @@ export const WelcomeBanner: React.FC = () => {
                 type="button"
                 title={opt.title}
                 onClick={() => setPeriod(opt.value)}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all btn-press ${
-                  isActive
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all btn-press ${isActive
                     ? 'bg-white text-slate-900 shadow-sm border border-slate-200/60 font-bold'
                     : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
-                }`}
+                  }`}
               >
                 {opt.label}
               </button>
