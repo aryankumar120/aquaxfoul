@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import { vi } from 'vitest';
 
 // Mock ResizeObserver for ECharts and responsive components in jsdom
 global.ResizeObserver = class ResizeObserver {
@@ -36,3 +37,17 @@ HTMLCanvasElement.prototype.getContext = (() => {
     clip: () => {},
   } as any;
 }) as any;
+
+// Mock apiClient network calls during unit tests so tests run against standalone mock baseline
+vi.mock('../services/api', () => ({
+  apiClient: {
+    get: vi.fn().mockRejectedValue(new Error('Network offline (test fallback)')),
+    post: vi.fn().mockRejectedValue(new Error('Network offline (test fallback)')),
+    put: vi.fn().mockRejectedValue(new Error('Network offline (test fallback)')),
+    delete: vi.fn().mockRejectedValue(new Error('Network offline (test fallback)')),
+    interceptors: {
+      request: { use: vi.fn() },
+      response: { use: vi.fn() },
+    },
+  },
+}));
