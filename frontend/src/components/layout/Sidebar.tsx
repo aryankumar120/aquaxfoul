@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
   Ship,
-  Layers,
   Waves,
   Droplets,
   LineChart,
@@ -18,7 +17,6 @@ export const Sidebar: React.FC = () => {
   const mainNavItems = [
     { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { label: 'Fleet', path: '/fleet', icon: Ship },
-    { label: 'Vessels', path: '/fleet', icon: Layers },
     { label: 'Fouling', path: '/fouling', icon: Waves },
     { label: 'Cleaning', path: '/cleaning', icon: Droplets },
     { label: 'Projections', path: '/projections', icon: LineChart },
@@ -53,14 +51,13 @@ export const Sidebar: React.FC = () => {
       <div className="relative z-10 flex-1 flex flex-col">
         {/* Brand Header */}
         <div className="p-6 pb-5 flex items-center space-x-3 border-b border-[#14232e]/60">
-          <div className="w-9 h-9 rounded-lg bg-[#0e272a]/90 border border-sky-400/30 flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
-            <img src="/logo.png" alt="Aqua-X-Foul Logo" className="w-7 h-7 object-contain" />
+          <div className="w-9 h-9 rounded-lg overflow-hidden shrink-0 shadow-sm">
+            <img src="/logo.png" alt="Aqua-X-Foul Logo" className="w-full h-full object-cover" />
           </div>
           <div>
             <div className="text-white font-bold text-lg tracking-tight leading-none flex items-center gap-1">
               Aqua-X-Foul
             </div>
-
           </div>
         </div>
 
