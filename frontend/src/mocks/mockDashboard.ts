@@ -83,10 +83,10 @@ export const mockDashboardSummary: DashboardSummary = {
     },
   },
   vesselDistribution: [
-    { type: 'Container Ship', count: 34, percentage: 23.9, color: '#00c9a7' },
+    { type: 'Container Ship', count: 34, percentage: 23.9, color: '#00B7EB' },
     { type: 'Bulk Carrier', count: 28, percentage: 19.7, color: '#10b981' },
     { type: 'General Cargo', count: 18, percentage: 12.7, color: '#3b82f6' },
-    { type: 'LNG Carrier', count: 16, percentage: 11.3, color: '#0ea5e9' },
+    { type: 'LNG Carrier', count: 16, percentage: 11.3, color: '#6366f1' },
     { type: 'Cruise', count: 12, percentage: 8.5, color: '#a855f7' },
     { type: 'Other', count: 34, percentage: 23.9, color: '#94a3b8' },
   ],

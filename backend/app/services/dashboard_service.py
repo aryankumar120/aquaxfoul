@@ -16,8 +16,8 @@ from app.schemas.vessel import VesselOut
 
 
 TYPE_COLORS = {
-    "Container Ship": "#00c9a7",
-    "Mega Container Ship": "#00c9a7",
+    "Container Ship": "#00B7EB",
+    "Mega Container Ship": "#00B7EB",
     "Bulk Carrier": "#0284c7",
     "Tanker": "#f97316",
     "General Cargo": "#a855f7",
@@ -28,7 +28,7 @@ TYPE_COLORS = {
 }
 
 RISK_COLORS = {
-    "Low": "#00c9a7",
+    "Low": "#10b981",
     "Moderate": "#f59e0b",
     "High": "#f97316",
     "Critical": "#ef4444",

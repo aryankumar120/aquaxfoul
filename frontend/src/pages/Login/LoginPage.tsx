@@ -44,7 +44,7 @@ export const LoginPage: React.FC = () => {
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="oceanGlow" cx="50%" cy="30%" r="60%">
-              <stop offset="0%" stopColor="#00c9a7" stopOpacity="0.15" />
+              <stop offset="0%" stopColor="#00B7EB" stopOpacity="0.15" />
               <stop offset="100%" stopColor="#070f14" stopOpacity="0" />
             </radialGradient>
           </defs>
@@ -59,12 +59,12 @@ export const LoginPage: React.FC = () => {
         </div>
         <h2 className="text-3xl font-extrabold text-white tracking-tight">Aqua-X-Foul</h2>
         <p className="mt-1.5 text-xs text-slate-400 font-medium">
-          Cleaner Vessels. <span className="text-[#00c9a7]">Greener Oceans.</span>
+          Cleaner Vessels. <span className="text-[#00B7EB]">Greener Oceans.</span>
         </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md relative z-10">
-        <div className="bg-[#0c161d] border border-[#162938] hover:border-[#00c9a7]/30 py-8 px-6 shadow-2xl rounded-2xl sm:px-10 card-subtle">
+        <div className="bg-[#0c161d] border border-[#162938] hover:border-[#00B7EB]/30 py-8 px-6 shadow-2xl rounded-2xl sm:px-10 card-subtle">
           {error && (
             <div className="mb-4 bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs p-3 rounded-lg flex items-center space-x-2">
               <AlertCircle className="w-4 h-4 shrink-0 text-rose-400" />
@@ -85,7 +85,7 @@ export const LoginPage: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@maritime.com"
-                  className="w-full pl-9 pr-3 py-2 bg-[#091117] border border-[#1b3244] focus:border-[#00c9a7] text-white rounded-lg text-xs placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-[#00c9a7] transition-colors"
+                  className="w-full pl-9 pr-3 py-2 bg-[#091117] border border-[#1b3244] focus:border-[#00B7EB] text-white rounded-lg text-xs placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-[#00B7EB] transition-colors"
                 />
               </div>
             </div>
@@ -101,7 +101,7 @@ export const LoginPage: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter password"
-                  className="w-full pl-9 pr-3 py-2 bg-[#091117] border border-[#1b3244] focus:border-[#00c9a7] text-white rounded-lg text-xs placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-[#00c9a7] transition-colors"
+                  className="w-full pl-9 pr-3 py-2 bg-[#091117] border border-[#1b3244] focus:border-[#00B7EB] text-white rounded-lg text-xs placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-[#00B7EB] transition-colors"
                 />
               </div>
             </div>
@@ -110,7 +110,7 @@ export const LoginPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex items-center justify-center space-x-2 py-2.5 px-4 rounded-lg text-xs font-bold text-slate-950 bg-[#00c9a7] hover:bg-[#02b395] transition-all btn-press shadow-lg shadow-[#00c9a7]/20 disabled:opacity-50"
+                className="w-full flex items-center justify-center space-x-2 py-2.5 px-4 rounded-lg text-xs font-bold text-slate-950 bg-[#00B7EB] hover:bg-[#00a3d1] transition-all btn-press shadow-lg shadow-[#00B7EB]/20 disabled:opacity-50"
               >
                 <span>{loading ? 'Authenticating...' : 'Sign In to Dashboard'}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -122,9 +122,9 @@ export const LoginPage: React.FC = () => {
           <div className="mt-6 pt-5 border-t border-[#162938] text-center">
             <button
               onClick={handleDemoLogin}
-              className="text-xs text-slate-400 hover:text-[#00c9a7] transition-all btn-press font-medium flex items-center justify-center space-x-1.5 mx-auto"
+              className="text-xs text-slate-400 hover:text-[#00B7EB] transition-all btn-press font-medium flex items-center justify-center space-x-1.5 mx-auto"
             >
-              <Shield className="w-3.5 h-3.5 text-[#00c9a7]" />
+              <Shield className="w-3.5 h-3.5 text-[#00B7EB]" />
               <span>Use 1-Click Administrator Session (Demo)</span>
             </button>
           </div>

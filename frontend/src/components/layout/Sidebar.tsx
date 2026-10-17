@@ -20,7 +20,7 @@ interface SidebarProps {
 const navLinkClass = (isActive: boolean) =>
   `nav-link group flex items-center space-x-3 px-3.5 py-2.5 rounded-lg text-sm font-medium ${
     isActive
-      ? 'is-active bg-[#0e3838] text-white shadow-sm border-[#00c9a7]/20 font-semibold'
+      ? 'is-active bg-[#0b3a4a] text-white shadow-sm border-[#00B7EB]/20 font-semibold'
       : 'border-transparent text-slate-400 hover:text-slate-100 hover:bg-[#cfd2d4]/15'
   }`;
 
@@ -128,9 +128,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ open = false, onClose }) => {
       </div>
 
       {/* Ocean Banner Card at Bottom */}
-      <div className="relative z-10 p-3 m-3 mt-auto rounded-xl overflow-hidden border border-[#1a3344] hover:border-[#00c9a7]/40 bg-[#0c1a24]/85 backdrop-blur-sm shadow-inner group card-subtle">
+      <div className="relative z-10 p-3 m-3 mt-auto rounded-xl overflow-hidden border border-[#1a3344] hover:border-[#00B7EB]/40 bg-[#0c1a24]/85 backdrop-blur-sm shadow-inner group card-subtle">
         <div className="p-2">
-          <div className="h-1 w-6 bg-[#00c9a7] rounded mb-2 transition-all duration-300 group-hover:w-10" />
+          <div className="h-1 w-6 bg-[#00B7EB] rounded mb-2 transition-all duration-300 group-hover:w-10" />
           <p className="text-xs font-semibold text-slate-200 leading-snug">
             Sustainable Shipping
           </p>
