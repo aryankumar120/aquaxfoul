@@ -54,11 +54,8 @@ export const LoginPage: React.FC = () => {
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative z-10 text-center">
         {/* Brand Logo */}
-        <div className="inline-flex w-14 h-14 rounded-2xl bg-[#0e272a] border border-[#00c9a7]/30 items-center justify-center mb-4 shadow-lg shadow-[#00c9a7]/10">
-          <svg className="w-8 h-8 text-[#00c9a7]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M3 9C6.5 6 10 12 14 9C17.5 6 21 12 21 9" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M3 15C6.5 12 10 18 14 15C17.5 12 21 18 21 15" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        <div className="inline-flex w-16 h-16 rounded-2xl bg-[#0e272a]/90 border border-sky-400/30 items-center justify-center mb-4 shadow-xl shadow-sky-500/10 overflow-hidden">
+          <img src="/logo.png" alt="Aqua-X-Foul Logo" className="w-12 h-12 object-contain" />
         </div>
         <h2 className="text-3xl font-extrabold text-white tracking-tight">Aqua-X-Foul</h2>
         <p className="mt-1.5 text-xs text-slate-400 font-medium">

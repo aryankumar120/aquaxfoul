@@ -53,11 +53,8 @@ export const Sidebar: React.FC = () => {
       <div className="relative z-10 flex-1 flex flex-col">
         {/* Brand Header */}
         <div className="p-6 pb-5 flex items-center space-x-3 border-b border-[#14232e]/60">
-          <div className="w-9 h-9 rounded-lg bg-[#0e272a] border border-[#00c9a7]/30 flex items-center justify-center shrink-0">
-            <svg className="w-6 h-6 text-[#00c9a7]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M3 9C6.5 6 10 12 14 9C17.5 6 21 12 21 9" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M3 15C6.5 12 10 18 14 15C17.5 12 21 18 21 15" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+          <div className="w-9 h-9 rounded-lg bg-[#0e272a]/90 border border-sky-400/30 flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+            <img src="/logo.png" alt="Aqua-X-Foul Logo" className="w-7 h-7 object-contain" />
           </div>
           <div>
             <div className="text-white font-bold text-lg tracking-tight leading-none flex items-center gap-1">
