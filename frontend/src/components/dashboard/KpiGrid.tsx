@@ -9,7 +9,7 @@ interface KpiGridProps {
 
 export const KpiGrid: React.FC<KpiGridProps> = ({ kpis }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
       {/* 1. Total Vessels */}
       <MetricCard
         title="Total Vessels"

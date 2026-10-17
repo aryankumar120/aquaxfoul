@@ -39,7 +39,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     filters.maxDwt;
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-5 space-y-4">
+    <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle p-4 sm:p-5 space-y-4">
       {/* Top Search & Filter Summary */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         {/* Search */}
@@ -55,7 +55,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         </div>
 
         {/* Counter and Reset */}
-        <div className="flex items-center space-x-3 text-xs">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">
           <span className="text-slate-500 font-medium">
             Found <b className="text-slate-900">{totalResults}</b> matching vessels
           </span>

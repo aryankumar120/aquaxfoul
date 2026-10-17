@@ -40,7 +40,7 @@ export const DashboardPage: React.FC = () => {
     return (
       <div className="space-y-6">
         <LoadingSkeleton type="card" />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
           <LoadingSkeleton type="chart" />
           <LoadingSkeleton type="chart" />
           <LoadingSkeleton type="chart" />
@@ -63,9 +63,9 @@ export const DashboardPage: React.FC = () => {
       <KpiGrid kpis={data.kpis} />
 
       {/* 3. Middle Visualizations Grid (3 Columns) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-4 sm:gap-6 items-stretch">
         {/* Vessel Distribution Donut */}
-        <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200/90 shadow-card card-hover p-6 flex flex-col justify-between group">
+        <div className="xl:col-span-4 min-w-0 bg-white rounded-xl border border-slate-200/90 shadow-card card-hover p-4 sm:p-6 flex flex-col justify-between group">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-base font-bold text-slate-900 tracking-tight group-hover:text-aqua-700 transition-colors">
               Vessel Distribution by Type
@@ -85,7 +85,7 @@ export const DashboardPage: React.FC = () => {
         </div>
 
         {/* Fouling Risk Distribution Bars */}
-        <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200/90 shadow-card card-hover p-6 flex flex-col justify-between group">
+        <div className="xl:col-span-4 min-w-0 bg-white rounded-xl border border-slate-200/90 shadow-card card-hover p-4 sm:p-6 flex flex-col justify-between group">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-base font-bold text-slate-900 tracking-tight group-hover:text-aqua-700 transition-colors">
               Fouling Risk Distribution
@@ -102,17 +102,17 @@ export const DashboardPage: React.FC = () => {
         </div>
 
         {/* Fuel Consumption Trend Line */}
-        <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200/90 shadow-card card-hover p-6 flex flex-col justify-between group">
+        <div className="md:col-span-2 xl:col-span-4 min-w-0 bg-white rounded-xl border border-slate-200/90 shadow-card card-hover p-4 sm:p-6 flex flex-col justify-between group">
           <FuelConsumptionTrendChart data={data.fuelConsumptionTrend} />
         </div>
       </div>
 
       {/* 4. Bottom Row: Recent Vessels Table & Recent Alerts List */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-        <div className="lg:col-span-8">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 sm:gap-6 items-stretch">
+        <div className="xl:col-span-8 min-w-0">
           <RecentVesselsTable vessels={data.recentVessels} />
         </div>
-        <div className="lg:col-span-4">
+        <div className="xl:col-span-4 min-w-0">
           <RecentAlertsList alerts={data.recentAlerts} />
         </div>
       </div>

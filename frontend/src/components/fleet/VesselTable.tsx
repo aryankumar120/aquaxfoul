@@ -33,7 +33,7 @@ export const VesselTable: React.FC<VesselTableProps> = ({
   return (
     <div className="bg-white rounded-xl border border-slate-200/90 shadow-card card-subtle overflow-hidden">
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse text-xs">
+        <table className="w-full min-w-[900px] text-left border-collapse text-xs">
           <thead>
             <tr className="bg-slate-50/80 border-b border-slate-200 text-slate-500 font-semibold uppercase tracking-wider">
               <th

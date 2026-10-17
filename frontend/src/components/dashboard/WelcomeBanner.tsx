@@ -15,13 +15,13 @@ export const WelcomeBanner: React.FC = () => {
   ];
 
   return (
-    <div className="relative z-10 bg-gradient-to-r from-white via-white to-sky-50/50 rounded-2xl p-6 border border-slate-200/90 shadow-card card-subtle flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+    <div className="relative z-10 bg-gradient-to-r from-white via-white to-sky-50/50 rounded-2xl p-4 sm:p-6 border border-slate-200/90 shadow-card card-subtle flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 group">
       {/* Clean subtle ambient gradient backdrop */}
       <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none bg-gradient-to-r from-transparent via-transparent to-sky-100/30" />
 
       {/* Greeting info */}
       <div className="z-10">
-        <h1 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
           Good morning, {user?.name?.split(' ')[0] || 'Aryan'}
         </h1>
         <p className="text-sm text-slate-500 mt-1 font-medium">
@@ -43,7 +43,7 @@ export const WelcomeBanner: React.FC = () => {
 
 
         {/* Inline Segmented Period Switcher (Zero overlap on cards below) */}
-        <div className="inline-flex items-center p-1 bg-slate-100/90 rounded-xl border border-slate-200/80 shadow-2xs">
+        <div className="inline-flex max-w-full overflow-x-auto items-center p-1 bg-slate-100/90 rounded-xl border border-slate-200/80 shadow-2xs">
           {pillOptions.map((opt) => {
             const isActive = period === opt.value;
             return (
@@ -52,7 +52,7 @@ export const WelcomeBanner: React.FC = () => {
                 type="button"
                 title={opt.title}
                 onClick={() => setPeriod(opt.value)}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all btn-press ${isActive
+                className={`px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-lg transition-all btn-press ${isActive
                     ? 'bg-white text-slate-900 shadow-sm border border-slate-200/60 font-bold'
                     : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
                   }`}

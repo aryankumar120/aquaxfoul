@@ -22,7 +22,7 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
   const endItem = Math.min(page * limit, total);
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-4 px-2 border-t border-slate-200 text-xs text-slate-600">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 py-4 px-2 border-t border-slate-200 text-xs text-slate-600 text-center md:text-left">
       {/* Range Display */}
       <div className="flex items-center space-x-2">
         <span>
@@ -33,7 +33,7 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
       </div>
 
       {/* Page Size & Page navigation */}
-      <div className="flex items-center space-x-4">
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
         {/* Page size select */}
         <div className="flex items-center space-x-2">
           <span>Rows per page:</span>
